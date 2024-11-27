@@ -2,10 +2,6 @@ import { IsNotEmpty, IsNumber, IsString, IsUUID } from 'class-validator';
 import { UUID } from 'crypto';
 
 export class CreateServiceDto {
-  @IsUUID()
-  @IsNotEmpty()
-  id: UUID;
-
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -16,9 +12,9 @@ export class CreateServiceDto {
 
   @IsNotEmpty()
   @IsNumber()
-  price: Number;
-  
+  price: number;
+
   @IsNotEmpty()
   @IsNumber()
-  duration: Number;
+  duration: number;
 }
