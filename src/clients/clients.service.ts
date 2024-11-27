@@ -39,7 +39,7 @@ export class ClientsService {
       throw new NotFoundException('Cliente inexistente');
     }
 
-    Object.assign(userclient, updateClientDto);
+    this.clientRepository.merge(userclient, updateClientDto);
 
     return this.clientRepository.save(userclient);
   }

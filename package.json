@@ -6,7 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -30,6 +31,7 @@
     "class-validator": "^0.14.1",
     "pg": "^8.13.1",
     "reflect-metadata": "^0.2.0",
+    "rimraf": "^6.0.1",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20"
   },

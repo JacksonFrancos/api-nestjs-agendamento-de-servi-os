@@ -5,6 +5,7 @@ import { ClientsModule } from './clients/clients.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Client } from './clients/entities/client.entity';
 import { ConfigModule } from '@nestjs/config';
+import { ServicesModule } from './services/services.module';
 
 
 @Module({
@@ -21,9 +22,10 @@ import { ConfigModule } from '@nestjs/config';
       entities: [Client],
       synchronize: true,
     }),
+    ServicesModule,
   ],
 
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
