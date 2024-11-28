@@ -11,7 +11,7 @@ export class ServicesService {
   constructor(
     @InjectRepository(Service)
     private readonly serviceRepository: Repository<Service>,
-  ) {}
+  ) { }
   async createService(CreateServiceDto: CreateServiceDto) {
     const serviceCreate = this.serviceRepository.create({
       id: randomUUID(),

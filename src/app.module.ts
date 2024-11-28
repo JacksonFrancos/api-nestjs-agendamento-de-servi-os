@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Client } from './clients/entities/client.entity';
 import { ConfigModule } from '@nestjs/config';
 import { ServicesModule } from './services/services.module';
+import { Service } from './services/entities/service.entity';
 
 
 @Module({
@@ -19,7 +20,7 @@ import { ServicesModule } from './services/services.module';
       username: 'postgres',
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [Client],
+      entities: [Client, Service],
       synchronize: true,
     }),
     ServicesModule,
